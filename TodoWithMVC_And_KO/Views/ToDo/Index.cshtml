@@ -1,11 +1,17 @@
-﻿
+﻿@model TodoWithMVC_And_KO.Models.ToDoViewModel
+
 @{
     ViewBag.Title = "To Do App";
 }
 
 <h2>ToDos</h2>
 
-<input type="text"/>
-<button type="submit">Add ToDo</button>
+@using (Html.BeginForm("AddTodo","ToDo", FormMethod.Post))
+{
+    @Html.TextBox("");
+    <button type="submit" value="todo">Add ToDo</button>
+}
+
+
 
 
