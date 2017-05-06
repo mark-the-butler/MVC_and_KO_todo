@@ -1,4 +1,4 @@
-﻿@model TodoWithMVC_And_KO.Models.ToDoViewModel
+﻿@model List<string>
 
 @{
     ViewBag.Title = "To Do App";
@@ -6,11 +6,20 @@
 
 <h2>ToDos</h2>
 
-@using (Html.BeginForm("AddTodo","ToDo", FormMethod.Post))
+@using (Html.BeginForm("AddTodo","ToDo"))
 {
-    @Html.TextBox("");
-    <button type="submit" value="todo">Add ToDo</button>
+    <input type="text" name="toDo"/>
+    <input type="submit"/>
 }
+
+<div>
+    <ul>
+      @foreach (var item in Model)
+      {
+          <li>@item</li>
+      }
+    </ul>
+</div>
 
 
 
