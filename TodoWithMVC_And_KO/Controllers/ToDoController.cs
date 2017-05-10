@@ -8,7 +8,7 @@ namespace TodoWithMVC_And_KO.Controllers
         // GET: ToDo
         public ActionResult Index()
         {
-            return View(new List<string>());
+            return View("Index", new List<string>());
         }
 
         [HttpPost]
